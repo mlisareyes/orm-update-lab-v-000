@@ -34,7 +34,12 @@ class Student
       VALUES (?, ?)
     SQL
 
-    DB[:conn].execute(sql, self.name, self.grade)   
+    DB[:conn].execute(sql, self.name, self.grade)
+
+    load_sql = <<-SQL
+      SELECT * FROM students WHERE name = ?;
+    SQL   
+    
   end
 
 
