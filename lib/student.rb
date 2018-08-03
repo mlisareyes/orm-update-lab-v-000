@@ -42,7 +42,6 @@ class Student
 
     load_data = DB[:conn].execute(load_sql, self.name)[0]
     self.id = load_data[0]   
-
   end
 
 
